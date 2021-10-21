@@ -3,8 +3,8 @@ import { CartWidget } from "./CartWidget"
 
 const NavBar = () => {
   return (
-    <div>
-      <Navbar bg="success" expand="lg">
+    <div className="w-100 d-flex justify-content-center">
+      <Navbar bg="success" expand="lg" >
         <Container>
           <Navbar.Brand href="#home" className="h1"><strong>Torre Oscura </strong> - Tienda de libros</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
