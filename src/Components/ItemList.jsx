@@ -4,22 +4,22 @@ import {Libros} from "./Item"
  export const LibrosList = () => {
 
     return (
-            Libros.map ((Libro) =>  <div key={Libro.id} >
+           { Libros.map ((Libro) =>  <div key={Libros.id} >
+
+                <h1>
+                    {Libros.name}
+                </h1>
 
                 <div>
-                    {Libro.name}
+                    <img src={Libros.img} alt="" />
                 </div>
 
-                <div>
-                    <img src="{Libros.foto}" alt="" />
-                </div>
-
-                <div>
-                    {Libro.precio}
-                </div>
+                <h2>
+                    {Libros.precio}
+                </h2>
 
             </div> 
-            )
-     
-    )
+           )}
+    
+           )
 }

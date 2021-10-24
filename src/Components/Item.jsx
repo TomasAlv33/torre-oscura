@@ -1,8 +1,8 @@
  import { useState } from "react"
 import { Card, Button } from "react-bootstrap"
 
- export const libros =() =>{
-     const [libro , setLibro] = useState([
+  
+    export const Libros =[
          {
          id: 1 , name:'El Resplandor', foto:'public\el-resplandor.jpg' , precio: '$1500',
         },
@@ -12,17 +12,17 @@ import { Card, Button } from "react-bootstrap"
         {
             id: 3, name:'El Resplandor', foto:'public\el-resplandor.jpg' , precio: '$1500'
         }
-         ]);
+         ];
 
- }
+ 
     
 
 
-export const ListaLibros = new Promise((resolve, reject)=>{
+/* export const ListaLibros = new Promise((resolve, reject)=>{
     setTimeout(()=>{
         resolve(libros)
     }, 10000)
-})
+}) */
 
 
 
