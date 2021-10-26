@@ -1,30 +1,23 @@
- import { useState } from "react";
-import { Card, Button } from "react-bootstrap";
-import Imagenes from "../Assets/Imagenes"
 
 
-  
-    export const Libros =[
-         {
-         id: 1 , name:'El Resplandor', img: src={Imagenes.img1} , price: '$1500',
+    const Libros = [
+        {
+            id: 1 , name:'El Resplandor', img: "../assets/img/elResplandor.jpg" , price: '$1500',
         },
         {
-            id: 2, name:'El Resplandor', img:'public\el-resplandor.jpg' , price: '$1500'
+            id: 2, name:'El Resplandor', img: "../assets/img/ChivasRegal.png" , price: '$1500'
         },
         {
-            id: 3, name:'El Resplandor', img:'public\el-resplandor.jpg' , price: '$1500'
+            id: 3, name:'El Resplandor', img:'../assets/img/elResplandor.jpg' , price: '$1500'
         },
-         ] ;
-
- 
-    
+    ] ;
 
 
-/* export const ListaLibros = new Promise((resolve, reject)=>{
+export const getListaLibros = new Promise((resolve, reject)=>{
     setTimeout(()=>{
-        resolve(libros)
-    }, 10000)
-}) */
+        resolve(Libros)
+    }, 2000)
+}) 
 
 
 

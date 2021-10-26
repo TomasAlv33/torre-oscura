@@ -1,10 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './Components/NavBar';
-import { ItemCount, ItemListContainer } from './Components/ItemListContainer';
-import { LibrosList } from './Components/ItemList';
-import { Libros } from './Components/Item';
-
+import { ItemListContainer } from './Components/ItemListContainer';
+import ItemList from "./Components/ItemList"
 
 function App() {
   return (
@@ -13,8 +11,7 @@ function App() {
         <div className="App-NavBar">
         <NavBar/>
         <ItemListContainer greeting='bienvenido'/>
-        <ItemCount/>
-        <Libros/>
+        <ItemList />
         </div>
        {/*  <img src={logo} className="App-logo" alt="logo" /> */}
         
