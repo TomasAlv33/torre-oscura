@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './Components/NavBar';
 import { ItemCount, ItemListContainer } from './Components/ItemListContainer';
 import { LibrosList } from './Components/ItemList';
+import { Libros } from './Components/Item';
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
         <NavBar/>
         <ItemListContainer greeting='bienvenido'/>
         <ItemCount/>
-        <LibrosList/>
+        <Libros/>
         </div>
        {/*  <img src={logo} className="App-logo" alt="logo" /> */}
         

@@ -1,10 +1,10 @@
-import {Libros} from "./Item"
+import {Libros} from "./Item";
 
 
- export const LibrosList = () => {
+  export const LibrosList = () => {
 
     return (
-           { Libros.map ((Libro) =>  <div key={Libros.id} >
+           { Libros.map ((libro) =>  <div key={Libros.id} >
 
                 <h1>
                     {Libros.name}
@@ -14,12 +14,12 @@ import {Libros} from "./Item"
                     <img src={Libros.img} alt="" />
                 </div>
 
-                <h2>
-                    {Libros.precio}
-                </h2>
+                <h3>
+                    {Libros.price}
+                </h3>
 
             </div> 
-           )}
+            )}
     
            )
-}
+} 

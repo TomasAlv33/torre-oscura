@@ -1,18 +1,20 @@
- import { useState } from "react"
-import { Card, Button } from "react-bootstrap"
+ import { useState } from "react";
+import { Card, Button } from "react-bootstrap";
+import Imagenes from "../Assets/Imagenes"
+
 
   
     export const Libros =[
          {
-         id: 1 , name:'El Resplandor', foto:'public\el-resplandor.jpg' , precio: '$1500',
+         id: 1 , name:'El Resplandor', img: src={Imagenes.img1} , price: '$1500',
         },
         {
-            id: 2, name:'El Resplandor', foto:'public\el-resplandor.jpg' , precio: '$1500'
+            id: 2, name:'El Resplandor', img:'public\el-resplandor.jpg' , price: '$1500'
         },
         {
-            id: 3, name:'El Resplandor', foto:'public\el-resplandor.jpg' , precio: '$1500'
-        }
-         ];
+            id: 3, name:'El Resplandor', img:'public\el-resplandor.jpg' , price: '$1500'
+        },
+         ] ;
 
  
     
