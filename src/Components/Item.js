@@ -10,6 +10,24 @@
         {
             id: 3, name:'El Resplandor', img:'../assets/img/elResplandor.jpg' , price: '$1500'
         },
+        {
+            id: 4, name:'El Resplandor', img:'../assets/img/elResplandor.jpg' , price: '$1500'
+        },
+        {
+            id: 5, name:'El Resplandor', img:'../assets/img/elResplandor.jpg' , price: '$1500'
+        },
+        {
+            id: 6, name:'El Resplandor', img:'../assets/img/elResplandor.jpg' , price: '$1500'
+        },
+        {
+            id: 7, name:'El Resplandor', img:'../assets/img/elResplandor.jpg' , price: '$1500'
+        },
+        {
+            id: 8, name:'El Resplandor', img:'../assets/img/elResplandor.jpg' , price: '$1500'
+        },
+        {
+            id: 9, name:'El Resplandor', img:'../assets/img/elResplandor.jpg' , price: '$1500'
+        },
     ] ;
 
 

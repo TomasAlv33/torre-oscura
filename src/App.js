@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import NavBar from './Components/NavBar';
 import { ItemListContainer } from './Components/ItemListContainer';
-import ItemList from "./Components/ItemList"
+
 
 function App() {
   return (
@@ -10,11 +10,9 @@ function App() {
       <header className="App-header">
         <div className="App-NavBar">
         <NavBar/>
-        <ItemListContainer greeting='bienvenido'/>
-        <ItemList />
+        <ItemListContainer greeting='Bienvenido a Torre Oscura.' />
         </div>
        {/*  <img src={logo} className="App-logo" alt="logo" /> */}
-        
       </header>
     </div>
   );

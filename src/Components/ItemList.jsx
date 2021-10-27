@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { getListaLibros } from "./Item.js"
-import { ItemCount } from "./ItemListContainer"
+import { ItemCount } from "./ItemCount"
 import logo from "../elResplandor.jpg"
 
   export default function LibrosList() {
@@ -15,19 +15,23 @@ import logo from "../elResplandor.jpg"
     console.log(libros, "Soy libros")
     
     return (
-        <>
+        < >
+        <div className="container__item">
             { libros.map(libro =>  
-                <div key={libro.id} >
+                <div className="item" key={libro.id} >
                     <h1>
                         {libro.name}
                     </h1>
-                    <img src={logo} alt="plandor" />
+                    <div className="logoLibros">
+                        <img src={logo} alt="Libro en venta" />
+                    </div>
                     <h3>
                         {libro.price}
                     </h3>
                 <ItemCount />
                 </div> 
             )}
-        </>
+        </div>
+        </>    
     )
 } 
