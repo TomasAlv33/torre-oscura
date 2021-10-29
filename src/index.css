@@ -20,8 +20,18 @@ code {
   flex-wrap: wrap;
 }
 
+
+header{
+  display: flex;
+  justify-content: center;
+} 
+
+.App-NavBar{
+  width: 100%;
+}
+
 .item{
-  margin: 5rem;
+  margin: 4rem;
 }
 
 .logoLibros img {

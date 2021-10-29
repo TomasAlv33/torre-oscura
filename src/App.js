@@ -1,7 +1,9 @@
-import logo from './logo.svg';
+import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'
 import './App.css';
 import NavBar from './Components/NavBar';
-import { ItemListContainer } from './Components/ItemListContainer';
+import {ItemListContainer} from './Components/ItemListContainer'
+import { ItemDetail } from './Components/ItemDetail';
+import { ItemDetailContainer } from './Components/ItemDetailContainer';
 
 
 function App() {
@@ -10,10 +12,17 @@ function App() {
       <header className="App-header">
         <div className="App-NavBar">
         <NavBar/>
-        <ItemListContainer greeting='Bienvenido a Torre Oscura.' />
         </div>
        {/*  <img src={logo} className="App-logo" alt="logo" /> */}
       </header>
+      <Router>
+            <Switch>
+               <Route>
+                   <ItemListContainer greeting='Bienvenido a Torre Oscura.' /> 
+                 <ItemDetailContainer/>
+             </Route>
+           </Switch>
+      </Router>
     </div>
   );
 }

@@ -5,8 +5,8 @@ const NavBar = () => {
   
   
   return (
-    <div>
-      <Navbar  className=" d-flex justify-content-end" bg="success" expand="lg" >
+    <div className="">
+      <Navbar bg="success" expand="lg" >
         <Navbar.Brand href="#home" className="h1"><strong>Torre Oscura </strong> - Tienda de libros</Navbar.Brand>
         <Container>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
