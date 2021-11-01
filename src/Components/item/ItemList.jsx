@@ -1,22 +1,18 @@
-import React, { useEffect, useState } from "react"
-import { getListaLibros } from "./Item.js"
-import { ItemCount } from "./ItemCount"
-import logo from "../elResplandor.jpg"
+import logo from "../../elResplandor.jpg"
+import { Link } from "react-router-dom"
 
-  export default function LibrosList() {
+  export default function LibrosList({libros}) {
 
-    const [libros, setLibros] = useState([])
-
-    useEffect(() => {
-        getListaLibros
-        .then( res =>   {
-            setLibros(res)  })
-        },[])
-    console.log(libros, "Soy libros")
+   
     
     return (
         < >
+        <div className="titulo">
+        <h2>¡Bienvenidos a Torre Oscura!</h2>
+        <h3>La tienda de libros de Stephen King</h3>
+        </div>
         <div className="container__item">
+            
             { libros.map(libro =>  
                 <div className="item" key={libro.id} >
                     <h1>
@@ -28,7 +24,7 @@ import logo from "../elResplandor.jpg"
                     <h3>
                         {libro.price}
                     </h3>
-                <ItemCount />
+                    <Link to ={`/item/${libro.id}`}> <button>Ver detalle</button> </Link>
                 </div> 
             )}
         </div>

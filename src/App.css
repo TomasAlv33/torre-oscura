@@ -1,6 +1,7 @@
 
 .App {
   text-align: center;
+  background-color: #f4f4f4;
 }
 
 .App-logo {
@@ -35,6 +36,44 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+strong{
+    color: black;
+}
+
+.titulo h2{
+  font-size: 4rem;
+}
+
+.titulo h3{
+  font-size: 2rem;
+}
+
+.App-NavBar{
+    background-color: #84b09b;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 5rem;
+}
+
+.App-NavBar a {
+  text-decoration: none;
+  padding: 1rem;
+  color: white;
+}
+
+.App-NavBar h1 {
+  font-size: 1.5rem;
+}
+
+.App-NavBar a:hover {
+    color: white;
+}
+
+.menu a:hover {
+  background-color:#95d09b 
 }
 
 .navbar__cart{

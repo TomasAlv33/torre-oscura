@@ -1,27 +1,25 @@
-import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css';
-import NavBar from './Components/NavBar';
-import {ItemListContainer} from './Components/ItemListContainer'
-import { ItemDetail } from './Components/ItemDetail';
-import { ItemDetailContainer } from './Components/ItemDetailContainer';
+import NavBar from './components/NavBar';
+import { ItemListContainer } from './components/containers/ItemListContainer'
+import { ItemDetail } from './components/item/ItemDetail';
+import { ItemDetailContainer } from './components/containers/ItemDetailContainer';
 
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <div className="App-NavBar">
-        <NavBar/>
-        </div>
-       {/*  <img src={logo} className="App-logo" alt="logo" /> */}
-      </header>
       <Router>
-            <Switch>
-               <Route>
-                   <ItemListContainer greeting='Bienvenido a Torre Oscura.' /> 
-                 <ItemDetailContainer/>
-             </Route>
-           </Switch>
+        <header className="App-header">
+          <div className="App-NavBar">
+            <NavBar />
+          </div>
+        </header>
+
+        <Switch>
+              < Route path='/listaDeLibros'exact  component={ItemListContainer}  />
+              < Route path='/item/:id'exact  component={ItemDetailContainer}  />
+        </Switch>
       </Router>
     </div>
   );
