@@ -1,5 +1,5 @@
-import logo from "../../elResplandor.jpg"
 import { Link } from "react-router-dom"
+import logo from "../../elResplandor.jpg"
 
   export default function LibrosList({libros}) {
 

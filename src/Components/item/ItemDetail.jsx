@@ -1,17 +1,18 @@
 import logo from "../../elResplandor.jpg"
 import { ItemCount } from './ItemCount.jsx'
-import { Link, } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { ItemDetailContainer } from "../containers/ItemDetailContainer"
 import React, { useEffect, useState } from "react"
 import { getDetailLibro } from "../item/Item.js"
-import { useParams } from "react-router"
+import { useParams } from "react-router-dom"
 
 
 export function ItemDetail()  {
 
     const {id} = useParams()
+    
 
-    const [detalle , setDetalle] = useState ([])
+     const [detalle , setDetalle] = useState ([])
 
 
     useEffect(() => {
@@ -19,9 +20,9 @@ export function ItemDetail()  {
         .then( res =>   {
             setDetalle(res)  })
         },[id])
-        
+         
 
-    console.log( 'soy libro' , detalle)
+    console.log( 'soy libroi' , detalle)
 
     return (
         <>
