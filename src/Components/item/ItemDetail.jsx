@@ -4,7 +4,7 @@ import { Link, } from 'react-router-dom'
 import { ItemDetailContainer } from "../containers/ItemDetailContainer"
 import React, { useEffect, useState } from "react"
 import { getDetailLibro } from "../item/Item.js"
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router"
 
 
 export function ItemDetail()  {
@@ -18,7 +18,7 @@ export function ItemDetail()  {
         getDetailLibro
         .then( res =>   {
             setDetalle(res)  })
-        },[])
+        },[id])
         
 
     console.log( 'soy libro' , detalle)
