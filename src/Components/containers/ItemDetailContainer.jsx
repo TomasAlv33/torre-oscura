@@ -9,21 +9,21 @@ export function ItemDetailContainer ()  {
 
     const {id} = useParams()
 
-    const [libro , setLibro] = useState ([])
+    const [detalle , setDetalle] = useState ([])
+
 
     useEffect(() => {
         getDetailLibro
-        .then(res=>{
-            setLibro(res)
-        })
-        .catch (err => console.log(err))
-    } , [id])
+        .then( res =>   {
+            setDetalle(res)  })
+        },[])
+        
 
-    console.log(libro)
+    console.log( 'soy libro' , detalle)
 
     return (
            <>
-              <ItemDetail libro={libro}/>
+              <ItemDetail detalle={detalle}/>
           </>
     )
 }

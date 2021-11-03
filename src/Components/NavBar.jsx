@@ -8,11 +8,11 @@ const NavBar = () => {
   return (
     <>    
       <div>
-       <Link to='/listaDeLibros'> <h1><strong>Torre Oscura -</strong> Tienda de Libros</h1></Link>
+       <Link to='/'> <h1><strong>Torre Oscura -</strong> Tienda de Libros</h1></Link>
       </div>
       <div className="menu">
-        <Link to='/listaDeLibros'>Home</Link>
-        <Link to='/listaDeLibros'>Libros</Link>
+        <Link to='/'>Home</Link>
+        <Link to='/'>Libros</Link>
         <Link to='/cart'>Carrito</Link>
       </div>
       <CartWidget/>

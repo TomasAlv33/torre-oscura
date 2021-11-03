@@ -20,6 +20,20 @@ code {
   flex-wrap: wrap;
 }
 
+.item h2 {
+  overflow:hidden;
+  text-overflow: ellipsis;
+  font-size: 2rem;
+}
+
+.libro__name{
+  width:15rem;
+  height: 2.5rem;
+}
+
+.libro__img img {
+  width: 10rem;
+}
 
 header{
   display: flex;

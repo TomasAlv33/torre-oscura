@@ -15,11 +15,11 @@ import { Link } from "react-router-dom"
             
             { libros.map(libro =>  
                 <div className="item" key={libro.id} >
-                    <h1>
+                    <h2 className="libro__name">
                         {libro.name}
-                    </h1>
-                    <div className="logoLibros">
-                        <img src={logo} alt="Libro en venta" />
+                    </h2>
+                    <div className="libro__img">
+                        <img src={libro.img} alt="Libro en venta" />
                     </div>
                     <h3>
                         {libro.price}
