@@ -11,13 +11,13 @@ function App() {
       <Router>
         <header className="App-header">
           <div className="App-NavBar">
-            <NavBar />
+          <Route path='/' component={NavBar} />
           </div>
         </header>
 
         <Switch>
-              < Route path='/' exact  component={ItemListContainer}  />
-              < Route path='/item/:id' exact  component={ItemDetailContainer}  />
+              < Route exact path='/'   component={ItemListContainer}  />
+              < Route exact path='/item/:id'   component={ItemDetailContainer}  />
         </Switch>
       </Router>
     </div>

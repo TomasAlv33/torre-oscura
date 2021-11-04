@@ -3,7 +3,7 @@ import { ItemCount } from './ItemCount.jsx'
 import { Link } from 'react-router-dom'
 import { ItemDetailContainer } from "../containers/ItemDetailContainer"
 import React, { useEffect, useState } from "react"
-import { getDetailLibro } from "../item/Item.js"
+import {getListaLibros } from "../item/Item.js"
 import { useParams } from "react-router-dom"
 
 
@@ -14,13 +14,12 @@ export function ItemDetail()  {
 
      const [detalle , setDetalle] = useState ([])
 
-
     useEffect(() => {
-        getDetailLibro
-        .then( res =>   {
-            setDetalle(res)  })
-        },[id])
-         
+       (getListaLibros)
+       .then((res ) =>{
+           const detalleLibro = res.filter(detalles => detalles.id === id)
+           setDetalle(detalleLibro)})
+       }, [id])
 
     console.log( 'soy libroi' , detalle)
 
