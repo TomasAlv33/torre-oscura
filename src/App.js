@@ -3,21 +3,21 @@ import './App.css';
 import NavBar from './components/NavBar';
 import { ItemListContainer } from './components/containers/ItemListContainer'
 import { ItemDetailContainer } from './components/containers/ItemDetailContainer';
+import { Cart } from './components/cart/Cart';
 
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <header className="App-header">
-          <div className="App-NavBar">
+        <header>
           <Route path='/' component={NavBar} />
-          </div>
         </header>
 
         <Switch>
               < Route exact path='/'   component={ItemListContainer}  />
               < Route exact path='/item/:id'   component={ItemDetailContainer}  />
+              <Route exact path='/cart' component={Cart}/>
         </Switch>
       </Router>
     </div>

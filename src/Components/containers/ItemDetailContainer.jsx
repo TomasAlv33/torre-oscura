@@ -17,9 +17,9 @@ export function ItemDetailContainer ()  {
       getListaLibros
       .then((res ) =>{
          const detalleLibro=res.filter(detalles => detalles.id === id)
-          setDetalle(res)})
+          setDetalle(detalleLibro)})
       }, [])
-      console.log( 'soy libroi' , detalle)
+      console.log( 'soy detalle' , detalle)
     return (
            <>
               <ItemDetail detalle={detalle}/>

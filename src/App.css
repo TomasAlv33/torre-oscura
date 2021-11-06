@@ -15,16 +15,6 @@
   }
 }
 
-.app{
-  width: 100%;
-}
-
-.App-header {
-  /* min-height: 100vh; */
-  font-size: calc(10px + 2vmin);
-  width: 100%;
-}
-
 .App-link {
   color: #61dafb;
 }
@@ -50,27 +40,31 @@ strong{
   font-size: 2rem;
 }
 
-.App-NavBar{
+.navBar{
     background-color: #84b09b;
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 5rem;
+    width: 100%;
+    font-size: calc(10px + 2vmin);
+
 }
 
-.App-NavBar a {
+.navBar a {
   text-decoration: none;
   padding: 1rem;
   color: white;
 }
 
-.App-NavBar h1 {
+.navBar h1 {
   font-size: 1.5rem;
 }
 
-.App-NavBar a:hover {
+.navBar a:hover {
     color: white;
 }
+
 
 .menu a:hover {
   background-color:#95d09b 
@@ -91,5 +85,40 @@ strong{
 }
 
 .details{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.itemDetail{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  margin-top: 2rem;
   background-color: rgba(128, 128, 128, 0.267);
+
+}
+
+.itemDetail div{
+    padding: 1rem;
+}
+
+.libro__description {
+  
+  background-color: rgba(102, 99, 99, 0.11);
+  width: 30vw;
+}
+
+.contador div{
+  padding: 0.3rem;
+}
+
+.button__back{
+  margin: 2rem 0 2rem;
+  width: 7rem;
+  height: 3.5rem;
 }
