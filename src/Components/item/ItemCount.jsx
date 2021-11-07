@@ -4,14 +4,14 @@ import { Link } from "react-router-dom"
 import { getListaLibros } from "./Item"
 import { useParams } from "react-router"
 
-export const ItemCount = () => {
+export const ItemCount = ({stock}) => {
 
     const {id} = useParams()
     const [boton,setBoton]= useState(1)
     const [finalizarCompra, setFinalizarCompre] = useState(false)
-     const [stock,setStock]= useState()
+     /* const [stock,setStock]= useState() */
 
-    useEffect(() => {
+ /*  useEffect(() => {
         getListaLibros
         .then((res) =>{
             const buscarStock=res.filter(stock => stock.id == id)
@@ -19,7 +19,7 @@ export const ItemCount = () => {
         })
     },[]) 
 
-   
+    */
 
     const bajarNumero = () => {
         if (boton>1){
@@ -41,7 +41,6 @@ export const ItemCount = () => {
         console.log({boton})
         if (boton > stock ){ alert('No hay mas stock !') }
         else {setFinalizarCompre(true)}
-        console.log('soy stock ', stock)
     }
 
     
