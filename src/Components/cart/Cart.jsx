@@ -6,7 +6,7 @@ export const Cart = () => {
 
         <>
 
-        <p>Soy cart</p>
+        <p>Soy cart </p>
 
         </>
 

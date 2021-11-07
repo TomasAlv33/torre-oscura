@@ -28,7 +28,12 @@ export function ItemDetail ( {detalle}) {
                     <h3>
                         {detalle.price}
                     </h3>
-                    <ItemCount/>
+                    <ItemCount stock={detalle.stock}/>
+                    <div>
+                        <p>
+                            <i>Quedan {detalle.stock} libros en stock.</i>
+                        </p>
+                    </div>
                 <Link to='/' > <button className="button__back">Volver</button></Link>
                 </div> 
                 
