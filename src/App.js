@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import { ItemListContainer } from './components/containers/ItemListContainer'
 import { ItemDetailContainer } from './components/containers/ItemDetailContainer';
 import { Cart } from './components/cart/Cart';
+import {CartContextProvider} from './components/cart/CartContext'
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
         </header>
 
         <Switch>
-              < Route exact path='/'   component={ItemListContainer}  />
+              < Route exact path='/:categoria'   component={ItemListContainer}  />
               < Route exact path='/item/:id'   component={ItemDetailContainer}  />
               <Route exact path='/cart' component={Cart}/>
         </Switch>

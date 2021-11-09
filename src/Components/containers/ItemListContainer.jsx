@@ -1,21 +1,24 @@
 import LibrosList from "../item/ItemList"
 import React, { useEffect, useState } from "react"
 import { getListaLibros } from "../item/Item"
+import { useParams } from 'react-router-dom'
 
 
+export const ItemListContainer = ({greeting}) => {
 
+    const {id} = useParams()
 
-export const ItemListContainer = ({ greeting }) => {
 
     const [libros, setLibros] = useState([])
 
     useEffect(() => {
-        getListaLibros
-        .then( res =>   {
-            setLibros(res)  })
-        },[])
+            getListaLibros
+            .then( res =>   {
+                setLibros(res.filter(cat => cat.categoria == id ))  })
+            },[])
         
-    console.log(libros, "Soy libros")
+      
+        
     return (
         <div>
             <h2> {greeting} </h2>

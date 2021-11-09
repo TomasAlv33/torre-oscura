@@ -2,17 +2,11 @@ import { ItemCount } from './ItemCount.jsx'
 import { Link } from 'react-router-dom'
 import { useState } from "react"
 import { useEffect } from "react"
+import { getListaLibros } from './Item.js'
 
 
 export function ItemDetail ( {detalle} ) {
 
-    const [stock,setStock]= useState()
-            
-    useEffect(() =>{
-        setStock(detalle.stock)
-    },)
- 
-    console.log ('soy stock ' , stock)
 
     return (
         <>
@@ -34,7 +28,7 @@ export function ItemDetail ( {detalle} ) {
                     <h3>
                         {detalle.price}
                     </h3>
-                    <ItemCount  stock={stock}/>
+                    <ItemCount  stock={detalle.stock}/>
                     <div>
                         <p>
                             <i>Quedan {detalle.stock} libros en stock.</i>

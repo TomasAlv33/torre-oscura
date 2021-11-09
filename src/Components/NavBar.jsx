@@ -13,7 +13,8 @@ const NavBar = () => {
         </div>
         <div className="menu">
           <Link to='/'>Home</Link>
-          <Link to='/'>Libros</Link>
+          <Link to='/categoria/king'>King</Link>
+          <Link to='/categoria/bachman'>Bachman</Link>
           
         </div>
         <div>

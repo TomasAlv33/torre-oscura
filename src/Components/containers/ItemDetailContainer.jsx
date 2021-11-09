@@ -16,7 +16,7 @@ export function ItemDetailContainer ()  {
    useEffect(() => {
       getListaLibros
       .then((res ) =>{
-         const detalleLibro=res.filter(detalles => detalles.id === id)
+         const detalleLibro=res.filter(detalles => detalles.id == id)
           setDetalle(detalleLibro)})
       }, [])
       console.log( 'soy detalle' , detalle)

@@ -1,25 +1,16 @@
-import { useEffect } from "react"
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import { getListaLibros } from "./Item"
 import { useParams } from "react-router"
+import { useEffect } from "react"
+import { getListaLibros } from "../item/Item.js"
 
 export const ItemCount = ({stock}) => {
 
     const {id} = useParams()
     const [boton,setBoton]= useState(1)
-    const [finalizarCompra, setFinalizarCompre] = useState(false)
-     /* const [stock,setStock]= useState() */
+    const [finalizarCompra, setFinalizarCompra] = useState(false)
 
- /*  useEffect(() => {
-        getListaLibros
-        .then((res) =>{
-            const buscarStock=res.filter(stock => stock.id == id)
-            setStock(buscarStock[3])
-        })
-    },[]) 
-
-    */
+       console.log('soy stock ' ,stock) 
 
     const bajarNumero = () => {
         if (boton>1){
@@ -31,16 +22,16 @@ export const ItemCount = ({stock}) => {
     }
 
     const subirNumero = () => {
-        if (boton>=1){
-        setBoton ( boton +1)
-        }
-        else setBoton(boton +0 )
+        setBoton(boton +1 )
     }
 
     const agregarCarrito = ()=>{
         console.log({boton})
-        if (boton > stock ){ alert('No hay mas stock !') }
-        else {setFinalizarCompre(true)}
+        if(boton > stock) {
+            alert(`No hay mas stock, podes comprar hasta ${stock} libros`)
+        }
+        else 
+        {setFinalizarCompra(true)}
     }
 
     
