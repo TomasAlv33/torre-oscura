@@ -1,16 +1,15 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import { useParams } from "react-router"
-import { useEffect } from "react"
-import { getListaLibros } from "../item/Item.js"
 
-export const ItemCount = ({stock}) => {
 
-    const {id} = useParams()
+export const ItemCount = ({stock , agregar}) => {
+
+
     const [boton,setBoton]= useState(1)
+
     const [finalizarCompra, setFinalizarCompra] = useState(false)
 
-       console.log('soy stock ' ,stock) 
+      /*  console.log('soy stock ' ,stock)  */
 
     const bajarNumero = () => {
         if (boton>1){
@@ -26,11 +25,12 @@ export const ItemCount = ({stock}) => {
     }
 
     const agregarCarrito = ()=>{
-        console.log({boton})
+        /* console.log({boton}) */
         if(boton > stock) {
             alert(`No hay mas stock, podes comprar hasta ${stock} libros`)
         }
         else 
+        agregar(boton)
         {setFinalizarCompra(true)}
     }
 

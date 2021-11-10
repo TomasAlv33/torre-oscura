@@ -4,25 +4,33 @@ import { getListaLibros } from "../item/Item"
 import { useParams } from 'react-router-dom'
 
 
-export const ItemListContainer = ({greeting}) => {
+export const ItemListContainer = ({ greeting }) => {
 
-    const {id} = useParams()
-
+    const { categoria } = useParams()
 
     const [libros, setLibros] = useState([])
 
     useEffect(() => {
+        if (categoria) {
             getListaLibros
-            .then( res =>   {
-                setLibros(res.filter(cat => cat.categoria == id ))  })
-            },[])
-        
-      
-        
+                .then(res => {
+                    setLibros(res.filter(cat => cat.escritor === categoria))
+                })
+
+            }
+        else {
+            getListaLibros
+                .then(res => {
+                    setLibros(res)
+                })
+        }
+
+
+    },[categoria])
     return (
         <div>
             <h2> {greeting} </h2>
-            <LibrosList libros={libros}/>
+            <LibrosList libros={libros} />
         </div>
     )
 }

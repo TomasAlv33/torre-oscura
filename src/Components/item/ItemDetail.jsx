@@ -1,12 +1,21 @@
 import { ItemCount } from './ItemCount.jsx'
 import { Link } from 'react-router-dom'
 import { useState } from "react"
-import { useEffect } from "react"
-import { getListaLibros } from './Item.js'
+import { useCartContext } from '../cart/CartContext.jsx'
 
 
 export function ItemDetail ( {detalle} ) {
 
+    const [count, setCount] = useState(0)
+
+    const {cartList, pushCart} = useCartContext()
+
+    const agregar =(cantidad)=>{
+        setCount(cantidad)
+        pushCart({detalle, cantidad })
+    }
+
+    console.log(cartList)
 
     return (
         <>
@@ -28,7 +37,7 @@ export function ItemDetail ( {detalle} ) {
                     <h3>
                         {detalle.price}
                     </h3>
-                    <ItemCount  stock={detalle.stock}/>
+                    <ItemCount  agregar={agregar} stock={detalle.stock}/>
                     <div>
                         <p>
                             <i>Quedan {detalle.stock} libros en stock.</i>

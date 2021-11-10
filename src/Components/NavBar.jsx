@@ -12,9 +12,9 @@ const NavBar = () => {
           <Link to='/'> <h1><strong>Torre Oscura -</strong> Tienda de Libros</h1></Link>
         </div>
         <div className="menu">
-          <Link to='/'>Home</Link>
-          <Link to='/categoria/king'>King</Link>
-          <Link to='/categoria/bachman'>Bachman</Link>
+          <Link to='/escritor/escritor'>Home</Link>
+          <Link to='/escritor/king'>King</Link>
+          <Link to='/escritor/bachman'>Bachman</Link>
           
         </div>
         <div>

@@ -10,17 +10,19 @@ import {CartContextProvider} from './components/cart/CartContext'
 function App() {
   return (
     <div className="App">
+      <CartContextProvider >
       <Router>
         <header>
-          <Route path='/' component={NavBar} />
+          <Route  component={NavBar} />
         </header>
 
         <Switch>
-              < Route exact path='/:categoria'   component={ItemListContainer}  />
+              < Route exact path='/escritor/:categoria'   component={ItemListContainer}  />
               < Route exact path='/item/:id'   component={ItemDetailContainer}  />
               <Route exact path='/cart' component={Cart}/>
         </Switch>
       </Router>
+      </CartContextProvider>
     </div>
   );
 }

@@ -19,7 +19,7 @@ export function ItemDetailContainer ()  {
          const detalleLibro=res.filter(detalles => detalles.id == id)
           setDetalle(detalleLibro)})
       }, [])
-      console.log( 'soy detalle' , detalle)
+      /* console.log( 'soy detalle' , detalle) */
     return (
            <>
               <ItemDetail detalle={detalle}/>
