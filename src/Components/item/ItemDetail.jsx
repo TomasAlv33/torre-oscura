@@ -10,9 +10,9 @@ export function ItemDetail ( {detalle} ) {
 
     const {cartList, pushCart} = useCartContext()
 
-    const agregar =(cantidad)=>{
-        setCount(cantidad)
-        pushCart({detalle, cantidad })
+    const agregar =(cant)=>{
+        setCount(cant)
+        pushCart({detalle, cantidad: cant })
     }
 
     console.log(cartList)
