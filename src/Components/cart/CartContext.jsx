@@ -1,4 +1,5 @@
 import {createContext, useState, useContext} from 'react'
+import LibrosList from '../item/ItemList'
 
 const CartContext = createContext()
 
@@ -11,16 +12,14 @@ export const CartContextProvider = ({children}) => {
 
 
     function pushCart(libros) { 
-       if(cartList.includes(libros.id)){
-        setCartList(
-            cartList 
-        )
-       } else {
-        setCartList([
-            ...cartList,
-            libros
-        ])
-       }
+      const productExist = cartList.find((item) => item.id === libros.id);
+      if (productExist) {
+          setCartList(cartList.map((item) => item.id === libros.id ? 
+          {... productExist , quantity: productExist.quantity +1} : item))
+          
+      } else {
+          setCartList([... cartList, {...libros, cantidad:1}])
+      }
     }
     
     const mostrarListado =()=>{

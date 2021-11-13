@@ -4,16 +4,16 @@ import { Link } from "react-router-dom"
 
 export const ItemCount = ({stock , agregar}) => {
 
-
     const [boton,setBoton]= useState(0)
 
     const [finalizarCompra, setFinalizarCompra] = useState(false)
 
     const [botonActivo, setBotonActivo] = useState(false)
 
-      /*  console.log('soy stock ' ,stock)  */
 
-      useEffect(()=>{
+      /*  console.log('soy stock ' ,stock)  */
+        
+      useEffect(() => {
         const bajarNumero = () => {
             if (boton>=1){
             setBoton ( boton -1)
@@ -31,15 +31,15 @@ export const ItemCount = ({stock , agregar}) => {
               else 
             setBoton(boton +1 )
         }
-    
+        
+        
         const agregarCarrito = ()=>{
             /* console.log({boton}) */
            
             agregar(boton)
             {setFinalizarCompra(true)}
-        }
-  } , [botonActivo])
-    
+            }
+        },[agregarCarrito])
     
   
     
