@@ -17,7 +17,7 @@ export function ItemDetailContainer ()  {
       getListaLibros
       .then((res ) =>{
          const detalleLibro=res.filter(detalles => detalles.id == id)
-          setDetalle(detalleLibro)})
+          setDetalle(detalleLibro[0])})
       }, [])
       /* console.log( 'soy detalle' , detalle) */
     return (

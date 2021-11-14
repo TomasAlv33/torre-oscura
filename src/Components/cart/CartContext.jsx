@@ -12,16 +12,14 @@ export const CartContextProvider = ({children}) => {
 
 
     function pushCart(libros) { 
-      const productExist = cartList.find((item) => item.id === libros.id);
+      const productExist = cartList.find((item) => item.id == libros.id);
       if (productExist) {
-          setCartList(cartList.map((item) => item.id === libros.id ? 
-          {... productExist , quantity: productExist.quantity +1} : item))
+         productExist.cantidad += libros.cantidad
           
       } else {
-          setCartList([... cartList, {...libros, cantidad:1}])
+          setCartList([... cartList, libros])
       }
     }
-    
     const mostrarListado =()=>{
         console.log(cartList)
     }

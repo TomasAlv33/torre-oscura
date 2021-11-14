@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route , Redirect } from 'react-router-dom'
 import './App.css';
 import NavBar from './components/NavBar';
 import { ItemListContainer } from './components/containers/ItemListContainer'
@@ -17,6 +17,7 @@ function App() {
         </header>
 
         <Switch>
+        <Redirect from="/torre-oscura" to="/" />
               < Route exact path='/'   component={ItemListContainer}  />
               < Route exact path='/escritor/:categoria'   component={ItemListContainer}  />
               < Route exact path='/item/:id'   component={ItemDetailContainer}  />

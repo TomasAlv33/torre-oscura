@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect,useLayoutEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
 
@@ -13,7 +13,6 @@ export const ItemCount = ({stock , agregar}) => {
 
       /*  console.log('soy stock ' ,stock)  */
         
-      useEffect(() => {
         const bajarNumero = () => {
             if (boton>=1){
             setBoton ( boton -1)
@@ -35,11 +34,9 @@ export const ItemCount = ({stock , agregar}) => {
         
         const agregarCarrito = ()=>{
             /* console.log({boton}) */
-           
             agregar(boton)
-            {setFinalizarCompra(true)}
+            setFinalizarCompra(true)
             }
-        },[agregarCarrito])
     
   
     
@@ -47,13 +44,13 @@ export const ItemCount = ({stock , agregar}) => {
         
         <div className="contador">
             <div className="contador__botones">
-                <button  onClick={bajarNumero}>-</button> {boton} <button disabled={botonActivo} onClick={subirNumero}>+</button>
+                <button  onClick={bajarNumero} disabled={boton === 0 ? true : false}>-</button> {boton} <button onClick={subirNumero} disabled={boton === stock ? true : false}>+</button>
             </div>
 
             <div className="contador__carrito">
                 { finalizarCompra ?
                  <Link to='/cart'>
-                 <button onClick={agregarCarrito}>Pasar al carrito</button>
+                 Pasar al carrito
                  </Link>
                
                 :

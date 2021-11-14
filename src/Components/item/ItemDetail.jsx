@@ -21,7 +21,6 @@ export function ItemDetail ( {detalle} ) {
         <>
              <div className="details">
 
-             { detalle.map(detalle =>  
                 <div className="itemDetail" key={detalle.id}>
                     <h2 className="libro__name">
                         {detalle.name}
@@ -46,7 +45,6 @@ export function ItemDetail ( {detalle} ) {
                 <Link to='/' > <button className="button__back">Volver</button></Link>
                 </div> 
                 
-            )}
 
             </div>
 
