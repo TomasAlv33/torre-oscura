@@ -22,7 +22,7 @@ export default function LibrosList({ libros }) {
                             <img src={libro.img} alt="Libro en venta" />
                         </div>
                         <h3>
-                            {libro.price}
+                            ${libro.price}
                         </h3>
                         <Link to={`/item/${libro.id}`}> <button>Ver detalle</button> </Link>
                     </div>

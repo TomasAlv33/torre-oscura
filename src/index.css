@@ -52,7 +52,32 @@ header{
   justify-content: center;
 } 
 
-
 .logoLibros img {
     width: 10rem;
+}
+
+.itemCart__container{
+  padding: 5rem 0 5rem;
+}
+
+.item__cart{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.item__cart i {
+  margin:0 3rem 0 .5rem
+}
+
+.itemDelete__all{
+  margin-top: 10rem;
+}
+
+.cart__widget{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

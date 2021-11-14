@@ -34,7 +34,7 @@ export function ItemDetail ( {detalle} ) {
                         </p>
                     </div>
                     <h3>
-                        {detalle.price}
+                        ${detalle.price}
                     </h3>
                     <ItemCount  agregar={agregar} stock={detalle.stock}/>
                     <div>

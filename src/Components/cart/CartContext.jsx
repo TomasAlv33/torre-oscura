@@ -1,3 +1,4 @@
+import { faGalacticSenate } from '@fortawesome/free-brands-svg-icons'
 import {createContext, useState, useContext} from 'react'
 import LibrosList from '../item/ItemList'
 
@@ -12,7 +13,7 @@ export const CartContextProvider = ({children}) => {
 
 
     function pushCart(libros) { 
-      const productExist = cartList.find((item) => item.id == libros.id);
+      const productExist = cartList.find((item) => item.detalle.id == libros.detalle.id);
       if (productExist) {
          productExist.cantidad += libros.cantidad
           
@@ -20,16 +21,29 @@ export const CartContextProvider = ({children}) => {
           setCartList([... cartList, libros])
       }
     }
+
+    
+
     const mostrarListado =()=>{
         console.log(cartList)
     }
 
+    const removerLibro = (libro) => {
+        setCartList(libro.cantidad -1 )
+    }
+ 
+    const borrarTodo = (libro) => {
+        const remove = cartList.filter(x => x.id == libro.id)
+        setCartList(remove)
+    }
 
     return (
         <CartContext.Provider value={{
             cartList,
             mostrarListado,
-            pushCart
+            pushCart,
+            borrarTodo , 
+            removerLibro
         }}>
             {children}
         </CartContext.Provider>
