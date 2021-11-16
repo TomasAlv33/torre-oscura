@@ -26,7 +26,7 @@ export function ItemDetail ( {detalle} ) {
                         {detalle.name}
                     </h2>
                     <div className="libro__img">
-                        <img src={detalle.img} alt="Libro en venta" />
+                        <img src={detalle.urlimg} alt="Libro en venta" />
                     </div>
                     <div>
                         <p className="libro__description">

@@ -32,9 +32,8 @@ export const CartContextProvider = ({children}) => {
         setCartList(libro.cantidad -1 )
     }
  
-    const borrarTodo = (libro) => {
-        const remove = cartList.filter(x => x.id == libro.id)
-        setCartList(remove)
+    const borrarTodo =() => {
+        setCartList([])
     }
 
     return (

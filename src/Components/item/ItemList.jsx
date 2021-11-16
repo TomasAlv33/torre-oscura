@@ -19,7 +19,7 @@ export default function LibrosList({ libros }) {
                             {libro.name}
                         </h2>
                         <div className="libro__img">
-                            <img src={libro.img} alt="Libro en venta" />
+                            <img src={libro.urlimg} alt="Libro en venta" />
                         </div>
                         <h3>
                             ${libro.price}
