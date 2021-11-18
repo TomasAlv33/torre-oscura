@@ -19,7 +19,7 @@ export const ItemListContainer = ({ greeting }) => {
             dbQuery
             .then(resp => setLibros(resp.docs.map(libro=>({id:libro.id,...libro.data()}))))
         } else {
-            const dbQuery=db.collection('items').get()
+            const dbQuery=db.collection('libros').get()
             dbQuery
             .then(resp => setLibros(resp.docs.map(libro=>({id:libro.id,...libro.data()}))))
         }
