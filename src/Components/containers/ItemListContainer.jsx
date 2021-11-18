@@ -7,17 +7,22 @@ import getFirestore from "../../services/getFirestore"
 
 export const ItemListContainer = ({ greeting }) => {
 
-    const { categoria } = useParams()
+    const { id } = useParams()
 
     const [libros, setLibros] = useState([])
 
     useEffect(() => {
 
-         const db = getFirestore()
-        const dbQuery = db.collection('libros').where('categoria', '==', 'king').get()
-        dbQuery
-        .then(resp => setLibros(resp.docs.map(libro => ({id:libro.id , ...libro.data()})))) 
-
+        const db = getFirestore()
+        if (id) {
+            const dbQuery=db.collection('libros').where('categoria' , '==' , id ).get()
+            dbQuery
+            .then(resp => setLibros(resp.docs.map(libro=>({id:libro.id,...libro.data()}))))
+        } else {
+            const dbQuery=db.collection('items').get()
+            dbQuery
+            .then(resp => setLibros(resp.docs.map(libro=>({id:libro.id,...libro.data()}))))
+        }
 
   /*       if (categoria) {
             getListaLibros
@@ -34,7 +39,7 @@ export const ItemListContainer = ({ greeting }) => {
         }
   */
 
-    },[categoria])
+    },[id])
     return (
         <div>
             <h2> {greeting} </h2>
