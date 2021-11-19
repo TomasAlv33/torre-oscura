@@ -30,7 +30,7 @@ export const CartContextProvider = ({children}) => {
 
     const removerLibro = (libros) => {
         const productExist = cartList.find((item) => item.detalle.id == libros.detalle.id);
-        productExist.cantidad  = 0
+        productExist.cantidad  -= 1 
     }
  
     const borrarTodo =() => {
