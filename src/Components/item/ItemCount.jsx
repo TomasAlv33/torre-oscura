@@ -14,12 +14,7 @@ export const ItemCount = ({stock , agregar}) => {
       /*  console.log('soy stock ' ,stock)  */
         
         const bajarNumero = () => {
-            if (boton>=1){
             setBoton ( boton -1)
-         }
-            else {
-                setBoton(boton +0)
-            }
         }
     
         const subirNumero = () => {

@@ -12,14 +12,13 @@ export function ItemDetailContainer ()  {
     const {id} = useParams()
  
  
-   const [detalle , setDetalle] = useState ([])
+   const [detalle , setDetalle] = useState ({})
 
    useEffect(() => {
 
     const db = getFirestore()
-    const dbQuery = db.collection('libros') . doc(id).get()
-    dbQuery
-    .then(resp => setDetalle({id: resp.id , ...resp.data(id) }))
+     db.collection('libros').doc(id).get()
+    .then(resp => setDetalle({id: resp.id , ...resp.data() }))
 
     /*   getListaLibros
       .then((res ) =>{
