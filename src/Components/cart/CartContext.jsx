@@ -28,11 +28,14 @@ export const CartContextProvider = ({children}) => {
         console.log(cartList)
     }
 
-    const removerLibro = (libros) => {
-        const productExist = cartList.find((item) => item.detalle.id == libros.detalle.id);
-        productExist.cantidad  -= 1 
+    const removerLibro = (id) => {
+        setCartList( cartList.filter(prod => prod.id !== id) )
     }
  
+    const precioTotal = () => {
+        return cartList.reduce((acum, prod) => acum + (prod.cantidad * prod.price) , 0)
+    }
+
     const borrarTodo =() => {
         setCartList([])
     }
@@ -43,7 +46,8 @@ export const CartContextProvider = ({children}) => {
             mostrarListado,
             pushCart,
             borrarTodo , 
-            removerLibro
+            removerLibro,
+            precioTotal,
         }}>
             {children}
         </CartContext.Provider>
