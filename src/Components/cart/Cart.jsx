@@ -94,8 +94,8 @@ export const Cart = () => {
             <div stylekey={libro.id} className="item__cart">
                 <h2>{libro.detalle.name}</h2>
                 <i> (cantidad:{libro.cantidad})</i>
-                <h3> - ${libro.detalle.price * libro.cantidad}</h3>
-                <button onClick={removerLibro}>Remover </button>
+                <h3> - ${precioTotal}</h3>
+                <button onClick={()=>removerLibro(libro.id)}>Remover </button>
             </div>
           
         )) }

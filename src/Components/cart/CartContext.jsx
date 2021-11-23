@@ -29,11 +29,11 @@ export const CartContextProvider = ({children}) => {
     }
 
     const removerLibro = (id) => {
-        setCartList( cartList.filter(prod => prod.id !== id) )
+        setCartList( cartList.filter(libro => libro.detalle.id != id) )
     }
  
     const precioTotal = () => {
-        return cartList.reduce((acum, prod) => acum + (prod.cantidad * prod.price) , 0)
+        cartList.reduce((acum, prod) => acum + (prod.cantidad * prod.price) , 0)
     }
 
     const borrarTodo =() => {

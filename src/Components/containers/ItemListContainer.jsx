@@ -8,7 +8,7 @@ import getFirestore from "../../services/getFirestore"
 export const ItemListContainer = ({ greeting }) => {
 
     const { categoria } = useParams()
-
+    
     const [libros, setLibros] = useState([])
 
     useEffect(() => {
