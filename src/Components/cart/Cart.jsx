@@ -19,17 +19,17 @@ export const Cart = () => {
         email: ''
     })
  
-
+ 
     const generarOrden = (e) =>{
         e.preventDefault()        
         let orden = {}
         orden.date = firebase.firestore.Timestamp.fromDate(new Date());    
         orden.buyer = formData
-         orden.total = precioTotal(); 
+        /* orden.total = precioTotal();  */
         orden.items = cartList.map(cartItem => {
-            const id = cartItem.id;
-            const nombre = cartItem.nombre;
-            const precio = cartItem.precio * cartItem.cantidad;
+            const id = cartItem.detalle.id;
+            const nombre = cartItem.detalle.name;
+            const precio = cartItem.detalle.price * cartItem.cantidad;
             
             return {id, nombre, precio}   
         })
@@ -47,7 +47,7 @@ export const Cart = () => {
         
       
         const itemsToUpdate = dbQuery.collection('libros').where(
-            firebase.firestore.FieldPath.documentId(), 'in', cartList.map(i=> i.id)
+            firebase.firestore.FieldPath.documentId(), 'in', cartList.map(i=> i.detalle.id)
         )
     
         const batch = dbQuery.batch();
@@ -88,7 +88,7 @@ export const Cart = () => {
                     Anda y selecciona alguno ! 
                 </Link>
             </div>
-            :
+            : 
         <div className="itemCart__container">
         {cartList.map ((libro) =>(
             <div stylekey={libro.id} className="item__cart">

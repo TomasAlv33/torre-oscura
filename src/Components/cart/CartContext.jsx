@@ -33,7 +33,7 @@ export const CartContextProvider = ({children}) => {
     }
  
     const precioTotal = () => {
-        cartList.reduce((acum, prod) => acum + (prod.cantidad * prod.price) , 0)
+        cartList.reduce((acum, libro) => acum + (libro.cantidad * libro.price) , 0)
     }
 
     const borrarTodo =() => {
