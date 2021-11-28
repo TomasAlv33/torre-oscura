@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import { getListaLibros } from "../item/Item.js"
 import { ItemDetail } from "../item/ItemDetail.jsx"
 import { useParams } from 'react-router-dom'
 import getFirestore from "../../services/getFirestore.js"
@@ -31,7 +30,7 @@ export function ItemDetailContainer() {
       .then((res ) =>{
          const detalleLibro=res.filter(detalles => detalles.id == id)
           setDetalle(detalleLibro[0])}) */
-  }, [])
+  }, [id])
   return (
     <>
       <ItemDetail detalle={detalle} />

@@ -92,9 +92,10 @@ export const Cart = () => {
         <div className="itemCart__container">
         {cartList.map ((libro) =>(
             <div stylekey={libro.id} className="item__cart">
+               <img src={libro.detalle.urlimg} alt="Imagen del libro a comprar" /> 
                 <h2>{libro.detalle.name}</h2>
                 <i> (cantidad:{libro.cantidad})</i>
-                <h3> - ${precioTotal}</h3>
+                <h3> - ${libro.detalle.price * libro.cantidad} </h3>
                 <button onClick={()=>removerLibro(libro.id)}>Remover </button>
             </div>
           

@@ -1,6 +1,5 @@
 import LibrosList from "../item/ItemList"
 import React, { useEffect, useState } from "react"
-import { getListaLibros } from "../item/Item"
 import { useParams } from 'react-router-dom'
 import getFirestore from "../../services/getFirestore"
 

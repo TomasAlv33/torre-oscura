@@ -122,3 +122,12 @@ strong{
   width: 7rem;
   height: 3.5rem;
 }
+
+.item__cart{
+  background-color: #84b09b28;
+}
+
+.itemCart__container img {
+  width: 6rem;
+  margin-right: 10rem;
+}

@@ -14,8 +14,8 @@ export const CartWidget =() =>{
         <p></p>
         :
         < div className="cart__widget">
-    <p>({cartList.length})</p>
     <FontAwesomeIcon icon={faShoppingCart}/>
+    <p>({cartList.length})</p>
     </div>
     }
     </>

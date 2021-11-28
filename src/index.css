@@ -57,7 +57,7 @@ header{
 }
 
 .itemCart__container{
-  padding: 5rem 0 5rem;
+    margin-top: 2rem;
 }
 
 .item__cart{
@@ -65,7 +65,8 @@ header{
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 2rem;
+  padding: 1rem 0 1rem;
+  margin-bottom: 0.3rem;
 }
 
 .item__cart i {
@@ -73,11 +74,15 @@ header{
 }
 
 .itemDelete__all{
-  margin-top: 10rem;
+  margin: 2rem 0 5rem;
 }
 
 .cart__widget{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+}
+
+.cart__widget p {
+  margin-left:0.5rem;
 }
