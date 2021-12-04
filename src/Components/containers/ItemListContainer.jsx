@@ -23,20 +23,7 @@ export const ItemListContainer = ({ greeting }) => {
             .then(resp => setLibros(resp.docs.map(libro=>({categoria:libro.categoria,...libro.data()}))))
         }
 
-  /*       if (categoria) {
-            getListaLibros
-                .then(res => {
-                    setLibros(res.filter(cat => cat.escritor === categoria))
-                })
-
-            }
-        else {
-            getListaLibros
-                .then(res => {
-                    setLibros(res)
-                })
-        }
-  */
+  
 
     },[categoria])
     return (

@@ -8,9 +8,7 @@ import getFirestore from "../../services/getFirestore"
 export const Cart = () => {
 
     const {cartList, precioTotal,removerLibro, borrarTodo} = useCartContext()
-
-    /* const totalPrice = cartList.reduce((price , cantidad ) =>price + libro.cantidad * libro.detalle.price,0) */
-   
+  
     const [idOrder, setIdOrder] = useState('')
 
     const [formData, setFormData] = useState({
@@ -25,7 +23,6 @@ export const Cart = () => {
         let orden = {}
         orden.date = firebase.firestore.Timestamp.fromDate(new Date());    
         orden.buyer = formData
-        /* orden.total = precioTotal();  */
         orden.items = cartList.map(cartItem => {
             const id = cartItem.detalle.id;
             const nombre = cartItem.detalle.name;
@@ -83,10 +80,12 @@ export const Cart = () => {
         {
             cartList.length === 0  ?
             <div>
-                <h1>No has seleccionado ningun libro</h1>
-                <Link to="/">
-                    Anda y selecciona alguno ! 
+                <h1>No has seleccionado ningun libro!</h1>
+                Hace click 
+                <Link to="/" className="seleccionar__link">
+                    acá
                 </Link>
+                y selecciona uno !
             </div>
             : 
         <div className="itemCart__container">
@@ -96,19 +95,20 @@ export const Cart = () => {
                 <h2>{libro.detalle.name}</h2>
                 <i> (cantidad:{libro.cantidad})</i>
                 <h3> - ${libro.detalle.price * libro.cantidad} </h3>
-                <button onClick={()=>removerLibro(libro.id)}>Remover </button>
+                <button onClick={()=>removerLibro(libro.detalle.id)}>Remover </button>
             </div>
           
         )) }
               <button onClick={borrarTodo} className="itemDelete__all">Limpiar el carrito</button>
-              <form 
+              <h3>Completa el formulario para realizar el pedido : </h3>
+              <form className="cart__form"
                 onSubmit={generarOrden} 
                 onChange={handleChange} 
             >
-                <input type='text' name='name' placeholder='name' value={formData.name}/>
-                <input type='text' name='phone'placeholder='tel' value={formData.phone}/>
-                <input type='email' name='email'placeholder='email' value={formData.email}/>
-                <button>Enviar</button>
+                <input type='text' name='name' placeholder='Nombre y apellido' value={formData.name}/>
+                <input type='text' name='phone'placeholder='Celular' value={formData.phone}/>
+                <input type='email' name='email'placeholder='Email' value={formData.email}/>
+                <button>Realizar pedido</button>
             </form>
         </div>
         }

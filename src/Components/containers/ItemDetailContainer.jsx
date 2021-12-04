@@ -26,10 +26,6 @@ export function ItemDetailContainer() {
 
 
 
-    /*   getListaLibros
-      .then((res ) =>{
-         const detalleLibro=res.filter(detalles => detalles.id == id)
-          setDetalle(detalleLibro[0])}) */
   }, [id])
   return (
     <>

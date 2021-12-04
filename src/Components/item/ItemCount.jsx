@@ -1,17 +1,17 @@
+import Button from "@restart/ui/esm/Button"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 
 
 export const ItemCount = ({stock , agregar}) => {
 
-    const [boton,setBoton]= useState(0)
+    const [boton,setBoton]= useState(1)
 
     const [finalizarCompra, setFinalizarCompra] = useState(false)
 
     const [botonActivo, setBotonActivo] = useState(false)
 
 
-      /*  console.log('soy stock ' ,stock)  */
         
         const bajarNumero = () => {
             setBoton ( boton -1)
@@ -20,7 +20,6 @@ export const ItemCount = ({stock , agregar}) => {
         const subirNumero = () => {
             if(boton  >= stock) {
                setBotonActivo(true)
-                /*   alert(`No hay mas stock, podes comprar hasta ${stock} libros`) */
               }
               else 
             setBoton(boton +1 )
@@ -28,7 +27,6 @@ export const ItemCount = ({stock , agregar}) => {
         
         
         const agregarCarrito = ()=>{
-            /* console.log({boton}) */
             agregar(boton)
             setFinalizarCompra(true)
             }
@@ -39,12 +37,13 @@ export const ItemCount = ({stock , agregar}) => {
         
         <div className="contador">
             <div className="contador__botones">
-                <button  onClick={bajarNumero} disabled={boton === 0 ? true : false}>-</button> {boton} <button onClick={subirNumero} disabled={boton === stock ? true : false}>+</button>
+                <button  onClick={bajarNumero} disabled={boton === 1 ? true : false}>-</button> {boton} <button onClick={subirNumero} disabled={boton === stock ? true : false}>+</button>
             </div>
 
             <div className="contador__carrito">
                 { finalizarCompra ?
-                 <Link to='/cart'>
+                
+                 <Link className="seleccionar__link " to='/cart'>
                  Pasar al carrito
                  </Link>
                

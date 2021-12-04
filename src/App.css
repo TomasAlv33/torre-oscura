@@ -131,3 +131,12 @@ strong{
   width: 6rem;
   margin-right: 10rem;
 }
+
+.cart__form input{
+  margin: 1rem;
+}
+
+.seleccionar__link {
+  text-decoration: none;
+  margin: 0 0.3rem 0 0.3rem;
+}
