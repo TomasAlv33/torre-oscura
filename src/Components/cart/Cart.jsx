@@ -43,25 +43,10 @@ export const Cart = () => {
         }))
         
       
-        const itemsToUpdate = dbQuery.collection('libros').where(
-            firebase.firestore.FieldPath.documentId(), 'in', cartList.map(i=> i.detalle.id)
-        )
-    
-        const batch = dbQuery.batch();
+        
         
     
-        itemsToUpdate.get()
-        .then( collection=>{
-            collection.docs.forEach(docSnapshot => {
-                batch.update(docSnapshot.ref, {
-                    stock: docSnapshot.data().stock - cartList.find(item => item.id === docSnapshot.id).cantidad
-                })
-            })
-    
-            batch.commit().then(res =>{
-                console.log('resultado batch:', res)
-            })
-        })
+     
     
         
     }
