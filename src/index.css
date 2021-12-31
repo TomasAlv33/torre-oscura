@@ -86,3 +86,12 @@ header{
 .cart__widget p {
   margin-left:0.5rem;
 }
+
+.orderCompra{
+  margin-top: 3rem;
+  font-size: 1.5rem;
+}
+
+.orderCompra b {
+  color: red;
+}

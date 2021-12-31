@@ -1,5 +1,4 @@
 import {createContext, useState, useContext} from 'react'
-
 const CartContext = createContext()
 
 export const useCartContext = ()=> useContext(CartContext) 
@@ -38,6 +37,11 @@ export const CartContextProvider = ({children}) => {
         setCartList([])
     }
 
+    const compraRealizada = (generarOrden) =>{
+        setCartList([])
+        alert('Gracias por tu compra !, tu orden de la misma es')
+    }
+
     return (
         <CartContext.Provider value={{
             cartList,
@@ -46,6 +50,7 @@ export const CartContextProvider = ({children}) => {
             borrarTodo , 
             removerLibro,
             precioTotal,
+            compraRealizada,
         }}>
             {children}
         </CartContext.Provider>
